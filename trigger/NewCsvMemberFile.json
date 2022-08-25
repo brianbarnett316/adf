@@ -3,18 +3,7 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "Copy from CSV to Profisee REST API",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"FileName": "@triggerBody().FileName",
-					"FileFolder": "@triggerBody().FolderPath"
-				}
-			}
-		],
+		"pipelines": [],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
 			"blobPathBeginsWith": "/profisee-input/blobs/",
