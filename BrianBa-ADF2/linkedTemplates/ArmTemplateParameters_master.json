@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "BrianBa-ADF2"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage_accountKey": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://brianbastorageadlsgen2.dfs.core.windows.net/"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
