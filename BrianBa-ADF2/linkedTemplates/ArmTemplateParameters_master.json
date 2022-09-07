@@ -17,15 +17,6 @@
 		"adf_kv_properties_typeProperties_baseUrl": {
 			"value": "https://BrianBa-ADF-KV.vault.azure.net/"
 		},
-		"NewCsvFile_properties_Copy from CSV to Profisee REST API_parameters_FileName": {
-			"value": "@triggerBody().FileName"
-		},
-		"NewCsvFile_properties_Copy from CSV to Profisee REST API_parameters_FileFolder": {
-			"value": "@triggerBody().FolderPath"
-		},
-		"NewCsvFile_properties_typeProperties_scope": {
-			"value": "/subscriptions/73814551-37dd-4143-a149-df9c2a2c97b6/resourceGroups/ProfiseeBrianBa/providers/Microsoft.Storage/storageAccounts/brianbastorageadlsgen2"
-		},
 		"containerUri": {
 			"value": ""
 		},
