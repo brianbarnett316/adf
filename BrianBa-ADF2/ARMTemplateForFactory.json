@@ -59,13 +59,19 @@
 					"authenticationType": "Anonymous",
 					"authHeaders": {
 						"X-API-Key": {
-							"type": "SecureString",
-							"value": "**********"
+							"type": "AzureKeyVaultSecret",
+							"store": {
+								"referenceName": "adf_kv",
+								"type": "LinkedServiceReference"
+							},
+							"secretName": "profisee-rest-api-key"
 						}
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/adf_kv')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/adf_kv')]",

@@ -15,13 +15,13 @@
 			"type": "string",
 			"defaultValue": "https://brianbastorageadlsgen2.dfs.core.windows.net/"
 		},
-		"RestService1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://brianbarnettprofisee07182022123111.dev.profisee.com/profisee/rest/v1"
-		},
 		"adf_kv_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://BrianBa-ADF-KV.vault.azure.net/"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://brianbarnettprofisee07182022123111.dev.profisee.com/profisee/rest/v1"
 		}
 	},
 	"variables": {
@@ -46,6 +46,19 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/adf_kv')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('adf_kv_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/RestService1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -59,26 +72,19 @@
 					"authenticationType": "Anonymous",
 					"authHeaders": {
 						"X-API-Key": {
-							"type": "SecureString",
-							"value": "**********"
+							"type": "AzureKeyVaultSecret",
+							"store": {
+								"referenceName": "adf_kv",
+								"type": "LinkedServiceReference"
+							},
+							"secretName": "profisee-rest-api-key"
 						}
 					}
 				}
 			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/adf_kv')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('adf_kv_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/adf_kv')]"
+			]
 		}
 	]
 }
