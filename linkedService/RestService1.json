@@ -1,7 +1,7 @@
 {
 	"name": "RestService1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"description": "Profisee REST API",
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
@@ -10,11 +10,15 @@
 			"authenticationType": "Anonymous",
 			"authHeaders": {
 				"X-API-Key": {
-					"type": "SecureString",
-					"value": "**********"
+					"type": "AzureKeyVaultSecret",
+					"store": {
+						"referenceName": "adf_kv",
+						"type": "LinkedServiceReference"
+					},
+					"secretName": "profisee-rest-api-key"
 				}
 			}
-		},
-		"description": "Profisee REST API"
-	}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
