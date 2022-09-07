@@ -70,10 +70,19 @@
 							},
 							{
 								"source": {
-									"path": "style"
+									"path": "color"
 								},
 								"sink": {
-									"name": "style",
+									"name": "color",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "class"
+								},
+								"sink": {
+									"name": "class",
 									"type": "String"
 								}
 							},
@@ -84,6 +93,24 @@
 								"sink": {
 									"name": "msrp",
 									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "sellEndDate"
+								},
+								"sink": {
+									"name": "sellEndDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "weight"
+								},
+								"sink": {
+									"name": "weight",
+									"type": "Decimal"
 								}
 							},
 							{
@@ -119,7 +146,7 @@
 								"type": "Expression"
 							},
 							"pageSize": 1000,
-							"attributes": " [productSubcategory], [style], [msrp]",
+							"attributes": "[productSubcategory], [color], [class], [msrp], [sellEndDate], [weight]",
 							"filter": " [color] eq 'BLK'",
 							"orderBy": " ",
 							"dbaFormat": 1,
