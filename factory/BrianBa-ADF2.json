@@ -1,0 +1,9 @@
+{
+	"name": "BrianBa-ADF2",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0f1e8cb7-76a8-460e-9dcb-de82974e8422",
+		"tenantId": "e4ba15d0-7fe2-4bd4-a3ef-a97a4378231e"
+	}
+}
