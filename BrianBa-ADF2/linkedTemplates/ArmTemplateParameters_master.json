@@ -5,17 +5,17 @@
 		"factoryName": {
 			"value": "BrianBa-ADF2"
 		},
-		"AzureDataLakeStorage_accountKey": {
+		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
-		"AzureDataLakeStorage_properties_typeProperties_url": {
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://brianbastorageadlsgen2.dfs.core.windows.net/"
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"value": "https://BrianBa-ADF-KV.vault.azure.net/"
-		},
-		"ProfiseeRestService_properties_typeProperties_url": {
+		"RestService1_properties_typeProperties_url": {
 			"value": "https://brianbarnettprofisee07182022123111.dev.profisee.com/profisee/rest/v1"
+		},
+		"adf_kv_properties_typeProperties_baseUrl": {
+			"value": "https://BrianBa-ADF-KV.vault.azure.net/"
 		},
 		"containerUri": {
 			"value": ""
